@@ -18,10 +18,9 @@ class AuthController extends Controller
     {
         $passportUser = Socialite::driver('laravelpassport')->user();
 
-        $user = User::where('id', $passportUser->id)
+        $user = User::where('email', $passportUser->email)
             ->firstOr(function () use ($passportUser) {
                 return User::create([
-                    'id' => $passportUser->id,
                     'email' => $passportUser->email,
                     'email_verified_at' => now(),
                     'name' => $passportUser->name,
