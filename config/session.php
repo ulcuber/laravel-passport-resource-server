@@ -196,6 +196,9 @@ return [
     |
     */
 
+    // @see https://www.chromium.org/administrators/policy-list-3/cookie-legacy-samesite-policies/
+    // @see https://owasp.org/www-community/controls/SecureCookieAttribute
+    // @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
     'same_site' => 'lax',
 
 ];
